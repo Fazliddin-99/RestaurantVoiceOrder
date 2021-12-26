@@ -6,9 +6,11 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.fazliddin.restaurantreservationmilliyintellekt.R
 import com.fazliddin.restaurantreservationmilliyintellekt.data.models.Meal
+import com.fazliddin.restaurantreservationmilliyintellekt.data.models.OrderListItem
 import com.fazliddin.restaurantreservationmilliyintellekt.data.models.Restaurant
 import com.fazliddin.restaurantreservationmilliyintellekt.presentation.ui.home.MealsListAdapter
 import com.fazliddin.restaurantreservationmilliyintellekt.presentation.ui.home.RestaurantsListAdapter
+import com.fazliddin.restaurantreservationmilliyintellekt.presentation.ui.orders.OrdersListAdapter
 
 @BindingAdapter("mealsListData")
 fun bindMealsListData(recyclerView: RecyclerView, data: List<Meal>?) {
@@ -19,6 +21,12 @@ fun bindMealsListData(recyclerView: RecyclerView, data: List<Meal>?) {
 @BindingAdapter("restaurantsListData")
 fun bindFurnitureListData(recyclerView: RecyclerView, data: List<Restaurant>?) {
     val adapter = recyclerView.adapter as RestaurantsListAdapter
+    adapter.submitList(data)
+}
+
+@BindingAdapter("ordersListData")
+fun bindOrdersListData(recyclerView: RecyclerView, data: List<OrderListItem>?) {
+    val adapter = recyclerView.adapter as OrdersListAdapter
     adapter.submitList(data)
 }
 

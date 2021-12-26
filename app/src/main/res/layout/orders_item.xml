@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="order"
+            type="com.fazliddin.restaurantreservationmilliyintellekt.data.models.OrderListItem" />
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/ListItem"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:layout_marginBottom="4dp"
+        android:clickable="true"
+        android:focusable="true"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="4dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?android:attr/selectableItemBackground">
+
+            <ImageView
+                android:id="@+id/image"
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginBottom="12dp"
+                android:adjustViewBounds="true"
+                android:scaleType="centerCrop"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/dasturxon" />
+
+            <TextView
+                android:id="@+id/orderName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:fontFamily="@font/inter"
+                android:text="@{ order.meal }"
+                android:textColor="@color/header_color"
+                android:textSize="20sp"
+                app:layout_constraintStart_toEndOf="@+id/image"
+                app:layout_constraintTop_toTopOf="@+id/image"
+                tools:text="Ambrosio Hotel and Restaurant" />
+
+            <TextView
+                android:id="@+id/orderQuantity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:fontFamily="@font/inter"
+                android:text="@{ String.valueOf(order.quantity) }"
+                android:textColor="@color/header_color"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="@+id/textView8"
+                app:layout_constraintStart_toEndOf="@+id/textView8"
+                app:layout_constraintTop_toTopOf="@+id/textView8"
+                app:layout_constraintVertical_bias="0.0"
+                tools:text="Amir Temur avenue 32" />
+
+            <TextView
+                android:id="@+id/orderPrice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:text="@{ String.valueOf(order.price) }"
+                android:textColor="@color/header_color"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/orderName"
+                tools:text="22 000" />
+
+            <TextView
+                android:id="@+id/textView7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:text="so'm"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toBottomOf="@+id/orderPrice"
+                app:layout_constraintStart_toEndOf="@+id/orderPrice"
+                app:layout_constraintTop_toTopOf="@+id/orderPrice" />
+
+            <TextView
+                android:id="@+id/textView8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:text="x"
+                app:layout_constraintBottom_toBottomOf="@+id/orderName"
+                app:layout_constraintStart_toEndOf="@+id/orderName"
+                app:layout_constraintTop_toTopOf="@+id/orderName" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</layout>

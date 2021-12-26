@@ -29,15 +29,17 @@
             android:layout_gravity="bottom"
             android:elevation="16dp"
             app:itemRippleColor="@null"
-
+            app:menu="@menu/bottom_app_bar"
             app:itemIconTint="@drawable/bottom_nav_item_tint">
 
             <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/voiceOrderBtn"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_marginBottom="32dp"
                 android:layout_gravity="center"
                 android:src="@drawable/ic_audio_wave"
+
                 android:outlineAmbientShadowColor="@color/yellow"
                 android:outlineSpotShadowColor="@color/yellow"
                 tools:ignore="SpeakableTextPresentCheck" />

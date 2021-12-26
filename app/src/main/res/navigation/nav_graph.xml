@@ -6,5 +6,26 @@
     <fragment
         android:id="@+id/homeFragment"
         android:name="com.fazliddin.restaurantreservationmilliyintellekt.presentation.ui.home.HomeFragment"
-        android:label="HomeFragment" />
+        android:label="HomeFragment" >
+        <action
+            android:id="@+id/action_homeFragment_to_voiceOrderFragment"
+            app:destination="@id/voiceOrderFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/ordersFragment"
+        android:name="com.fazliddin.restaurantreservationmilliyintellekt.presentation.ui.orders.OrdersFragment"
+        android:label="OrdersFragment" >
+        <argument
+            android:name="orders"
+            app:argType="com.fazliddin.restaurantreservationmilliyintellekt.data.models.OrderListItem[]"
+            app:nullable="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/voiceOrderFragment"
+        android:name="com.fazliddin.restaurantreservationmilliyintellekt.presentation.ui.voiceorder.VoiceOrderFragment"
+        android:label="VoiceOrderFragment" >
+        <action
+            android:id="@+id/action_voiceOrderFragment_to_ordersFragment"
+            app:destination="@id/ordersFragment" />
+    </fragment>
 </navigation>

@@ -1,1 +1,1 @@
-"# MilliyIntellekt" 
+# MilliyIntellekt
